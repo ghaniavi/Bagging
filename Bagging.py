@@ -20,7 +20,7 @@ class Bagging:
         self.output = []
 
     def open_datatrain(self):
-        with open('TrainsetTugas4ML.csv') as csvfile:
+        with open('Trainset.csv') as csvfile:
             next(csvfile)
             spamreader = csv.reader(csvfile)
             for row_train in spamreader:
@@ -28,7 +28,7 @@ class Bagging:
         csvfile.close()
 
     def open_datatest(self):
-        with open('TestsetTugas4ML.csv') as csvfile:
+        with open('Testset.csv') as csvfile:
             next(csvfile)
             spamreader = csv.reader(csvfile)
             for row_test in spamreader:
@@ -118,7 +118,7 @@ class Bagging:
         self.output.append(self.count_class(a))
 
     def print_hasil(self):
-        with open('TebakanTugas4ML.csv', 'w') as csvFile:
+        with open('Tebakan.csv', 'w') as csvFile:
             text = ""
             for x in self.output[0]:
                 text += x + "\n"
